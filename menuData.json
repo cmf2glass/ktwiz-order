@@ -1,0 +1,119 @@
+{
+  "apiStatus": {
+    "code": 0,
+    "msg": "SUCCESS"
+  },
+  "data": {
+    "count": 42,
+    "list": [
+      {
+        "store_id": 324,
+        "store_type": 18,
+        "store_type_name": "디저트",
+        "store_name": "요아정",
+        "store_group_name": "요아정",
+        "store_logo": "https://static-assets.norder.kr/uploads/stores/324/20260318_021357/image_1773800036233_xn59xt_7ede6697.jpg",
+        "store_message": "프리미엄 디저트",
+        "store_open": 1,
+        "store_zone": "2F",
+        "store_product_list": [
+          {
+            "store_product_id": 4884,
+            "store_product_name": "홈런의 정석",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/324/20260318_021622/image_1773800182113_sy0b5d_fc735030.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/324/20260318_021622/440/image_1773800182113_sy0b5d_fc735030.jpg",
+            "store_product_price": 18000
+          },
+          {
+            "store_product_id": 4885,
+            "store_product_name": "샤인 캐치의 정석",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/324/20260318_021650/image_1773800210281_12zo54_dd345ba6.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/324/20260318_021650/440/image_1773800210281_12zo54_dd345ba6.jpg",
+            "store_product_price": 17500
+          }
+        ]
+      },
+      {
+        "store_id": 229,
+        "store_type": 9,
+        "store_type_name": "한식",
+        "store_name": "요아정",
+        "store_group_name": "요아정",
+        "store_logo": "https://static-assets.norder.kr/uploads/stores/229/20240829_043858/image_1724893138495_pwk9bb_0e57de88.jpg",
+        "store_message": "한끼 한끼 정성스럽게",
+        "store_open": 1,
+        "store_zone": "2F",
+        "store_product_list": [
+          {
+            "store_product_id": 3936,
+            "store_product_name": "직화구성",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/229/20240905_023011/image_1725491411850_4g7o37_fcf86f4b.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/229/20240905_023011/440/image_1725491411850_4g7o37_fcf86f4b.jpg",
+            "store_product_price": 15000
+          },
+          {
+            "store_product_id": 3937,
+            "store_product_name": "치즈불고기",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/229/20240905_023024/image_1725491424936_jhh5cp_7c0e0dc6.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/229/20240905_023024/440/image_1725491424936_jhh5cp_7c0e0dc6.jpg",
+            "store_product_price": 16000
+          }
+        ]
+      },
+      {
+        "store_id": 254,
+        "store_type": 8,
+        "store_type_name": "분식/스넥",
+        "store_name": "마성떡볶이",
+        "store_group_name": "마성떡볶이",
+        "store_logo": "https://static-assets.norder.kr/uploads/stores/254/20250113_075028/image_1736751628833_ypxvum_30e08c2e.jpg",
+        "store_message": "고집불 떡볶이 마성떡볶이",
+        "store_open": 1,
+        "store_zone": "2F",
+        "store_product_list": [
+          {
+            "store_product_id": 4137,
+            "store_product_name": "쌈싸라다",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/254/20260222_090332/image_1772077412491_qn5nc4_8d1f3c4c.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/254/20260222_090332/440/image_1772077412491_qn5nc4_8d1f3c4c.jpg",
+            "store_product_price": 12500
+          },
+          {
+            "store_product_id": 4138,
+            "store_product_name": "명랑핫도그",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/254/20260222_090345/image_1772077425611_rvnkf3_5d0c57f6.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/254/20260222_090345/440/image_1772077425611_rvnkf3_5d0c57f6.jpg",
+            "store_product_price": 8500
+          }
+        ]
+      },
+      {
+        "store_id": 326,
+        "store_type": 9,
+        "store_type_name": "분식/인주",
+        "store_name": "스트릿츄러스",
+        "store_group_name": "스트릿츄러스",
+        "store_logo": "https://static-assets.norder.kr/uploads/stores/326/20260319_122530/image_1773923130901_ef2wmg_81c79403.jpg",
+        "store_message": "한 입에 느끼는 쫀바속의 정성, 스트릿츄러스!",
+        "store_open": 1,
+        "store_zone": "2F",
+        "store_product_list": [
+          {
+            "store_product_id": 4903,
+            "store_product_name": "쌀떡 튀김",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/326/20260320_143014/image_1774017601605_yJrJ14_9e5be398.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/326/20260320_143014/440/image_1774017601605_yJrJ14_9e5be398.jpg",
+            "store_product_price": 9800
+          },
+          {
+            "store_product_id": 4904,
+            "store_product_name": "치즈츄러스",
+            "store_product_image": "https://static-assets.norder.kr/uploads/stores/326/20260320_143026/image_1774017626333_kd312k3k_f38ff4cb.jpg",
+            "store_product_image_medium": "https://static-assets.norder.kr/uploads/stores/326/20260320_143026/440/image_1774017626333_kd312k3k_f38ff4cb.jpg",
+            "store_product_price": 11500
+          }
+        ]
+      }
+    ]
+  }
+}
