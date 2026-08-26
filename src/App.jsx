@@ -1,49 +1,28 @@
 import React, { useState, useEffect } from 'react';
-import { createClient } from '@supabase/supabase-js';
 import './App.css';
-import menuData from './menuData.json';
-
-const SUPABASE_URL = 'https://lcfkvkxirslvpozqeyyf.supabase.co';
-const SUPABASE_KEY = 'sb_publishable_Bf7gy63pXShqJ8Uxyf2s_Q_wZyYYjrT';
-
-const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
 export default function App() {
   const [userName, setUserName] = useState('');
-  const [sessionId, setSessionId] = useState('');
   const [page, setPage] = useState('name'); // 'name', 'menu', 'summary'
-  const [myCart, setMyCart] = useState([]);
-  const [allOrders, setAllOrders] = useState([]);
-  const [stores] = useState(menuData.data.list);
+  const [myOrders, setMyOrders] = useState([]);
+  const [stores, setStores] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  // 세션 ID 생성
+  // 메뉴 데이터 로드
   useEffect(() => {
-    const id = 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
-    setSessionId(id);
-  }, []);
-
-  // 실시간 주문 구독
-  useEffect(() => {
-    if (!sessionId) return;
-
-    const subscription = supabase
-      .from('orders')
-      .on('*', (payload) => {
-        loadAllOrders();
-      })
-      .subscribe();
-
-    loadAllOrders();
-
-    return () => {
-      subscription.unsubscribe();
+    const loadData = async () => {
+      try {
+        const response = await fetch('/menuData.json');
+        const data = await response.json();
+        setStores(data.data.list);
+        setLoading(false);
+      } catch (error) {
+        console.error('데이터 로드 실패:', error);
+        setLoading(false);
+      }
     };
-  }, [sessionId]);
-
-  const loadAllOrders = async () => {
-    const { data } = await supabase.from('orders').select('*');
-    setAllOrders(data || []);
-  };
+    loadData();
+  }, []);
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
@@ -52,33 +31,27 @@ export default function App() {
     }
   };
 
-  const addToCart = async (store, product, quantity) => {
+  const addOrder = (store, product, quantity) => {
     if (quantity <= 0) return;
-
-    const cartItem = {
-      session_id: sessionId,
-      user_name: userName,
-      store_id: store.store_id,
-      store_name: store.store_name,
-      product_id: product.store_product_id,
-      product_name: product.store_product_name,
-      product_image: product.store_product_image_medium,
-      product_price: product.store_product_price,
-      quantity: quantity,
+    
+    const newOrder = {
+      id: Date.now(),
+      userName,
+      storeName: store.store_name,
+      productName: product.store_product_name,
+      productImage: product.store_product_image_medium || product.store_product_image,
+      price: product.store_product_price,
+      quantity
     };
-
-    // 내 장바구니에 추가
-    setMyCart([...myCart, cartItem]);
-
-    // Supabase에 저장
-    await supabase.from('orders').insert([cartItem]);
+    
+    setMyOrders([...myOrders, newOrder]);
   };
 
-  const removeFromMyCart = (index) => {
-    setMyCart(myCart.filter((_, i) => i !== index));
+  const removeOrder = (id) => {
+    setMyOrders(myOrders.filter(order => order.id !== id));
   };
 
-  // 페이지별 렌더링
+  // 이름 입력 페이지
   if (page === 'name') {
     return (
       <div className="container name-page">
@@ -103,91 +76,90 @@ export default function App() {
     );
   }
 
+  // 메뉴 페이지
   if (page === 'menu') {
     return (
       <div className="menu-page">
         <div className="menu-header">
-          <h1>KT Wiz Park 🏟️</h1>
-          <p>안녕하세요, {userName}님!</p>
-          <button
-            onClick={() => setPage('summary')}
-            className="btn-summary"
-          >
-            📋 주문 확인 ({myCart.length})
+          <h1>🏟️ KT Wiz Park</h1>
+          <p>안녕하세요, <strong>{userName}</strong>님!</p>
+          <button className="btn-summary" onClick={() => setPage('summary')}>
+            📋 주문 확인 ({myOrders.length})
           </button>
         </div>
 
-        <div className="stores-grid">
-          {stores.map((store) => (
-            <StoreCard
-              key={store.store_id}
-              store={store}
-              onAddProduct={addToCart}
-            />
-          ))}
-        </div>
+        {loading ? (
+          <div style={{ textAlign: 'center', padding: '40px' }}>로딩 중...</div>
+        ) : (
+          <div className="stores-grid">
+            {stores.map((store) => (
+              <StoreCard
+                key={store.store_id}
+                store={store}
+                onAddOrder={addOrder}
+              />
+            ))}
+          </div>
+        )}
       </div>
     );
   }
 
+  // 주문 확인 페이지
   if (page === 'summary') {
-    const groupedOrders = {};
-    allOrders.forEach((order) => {
-      if (!groupedOrders[order.user_name]) {
-        groupedOrders[order.user_name] = [];
-      }
-      groupedOrders[order.user_name].push(order);
-    });
+    const total = myOrders.reduce((sum, order) => sum + order.price * order.quantity, 0);
 
     return (
       <div className="summary-page">
         <div className="summary-header">
-          <h1>📋 주문 현황</h1>
-          <button
-            onClick={() => setPage('menu')}
-            className="btn-back"
-          >
+          <h1>📋 내 주문</h1>
+          <button className="btn-back" onClick={() => setPage('menu')}>
             ◀ 메뉴로
           </button>
         </div>
 
         <div className="summary-content">
-          {Object.entries(groupedOrders).map(([name, orders]) => (
-            <div key={name} className="person-section">
-              <h3>{name}</h3>
-              {orders.map((order, idx) => (
-                <div key={idx} className="order-item">
-                  <div className="order-info">
-                    <strong>{order.product_name}</strong>
-                    <span className="order-store">{order.store_name}</span>
-                  </div>
-                  <div className="order-qty">
-                    x{order.quantity}
-                  </div>
-                  <div className="order-price">
-                    ₩{order.product_price * order.quantity}
-                  </div>
+          {myOrders.length === 0 ? (
+            <p style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
+              주문한 음식이 없습니다
+            </p>
+          ) : (
+            myOrders.map((order) => (
+              <div key={order.id} className="order-item">
+                <img src={order.productImage} alt={order.productName} className="order-image" />
+                <div className="order-info">
+                  <strong>{order.productName}</strong>
+                  <span className="order-store">{order.storeName}</span>
                 </div>
-              ))}
-            </div>
-          ))}
+                <div className="order-details">
+                  <span>x{order.quantity}</span>
+                  <span className="order-price">₩{order.price * order.quantity}</span>
+                  <button className="btn-delete" onClick={() => removeOrder(order.id)}>
+                    ✕
+                  </button>
+                </div>
+              </div>
+            ))
+          )}
         </div>
 
-        <div className="summary-footer">
-          <p>💰 총액: ₩{allOrders.reduce((sum, o) => sum + o.product_price * o.quantity, 0)}</p>
-        </div>
+        {myOrders.length > 0 && (
+          <div className="summary-footer">
+            <p>💰 총액: <strong>₩{total.toLocaleString()}</strong></p>
+          </div>
+        )}
       </div>
     );
   }
 }
 
-function StoreCard({ store, onAddProduct }) {
+function StoreCard({ store, onAddOrder }) {
   const [expanded, setExpanded] = useState(false);
   const [quantities, setQuantities] = useState({});
 
-  const handleAddClick = (product) => {
+  const handleAdd = (product) => {
     const qty = quantities[product.store_product_id] || 1;
-    onAddProduct(store, product, qty);
+    onAddOrder(store, product, qty);
     setQuantities({ ...quantities, [product.store_product_id]: 1 });
   };
 
@@ -204,18 +176,15 @@ function StoreCard({ store, onAddProduct }) {
 
       {expanded && (
         <div className="store-products">
-          {store.store_product_list.map((product) => (
+          {store.store_product_list?.map((product) => (
             <ProductCard
               key={product.store_product_id}
               product={product}
               quantity={quantities[product.store_product_id] || 1}
               onQuantityChange={(qty) =>
-                setQuantities({
-                  ...quantities,
-                  [product.store_product_id]: qty,
-                })
+                setQuantities({ ...quantities, [product.store_product_id]: qty })
               }
-              onAdd={() => handleAddClick(product)}
+              onAdd={() => handleAdd(product)}
             />
           ))}
         </div>
@@ -231,10 +200,13 @@ function ProductCard({ product, quantity, onQuantityChange, onAdd }) {
         src={product.store_product_image_medium || 'https://via.placeholder.com/150'}
         alt={product.store_product_name}
         className="product-image"
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/150';
+        }}
       />
       <div className="product-info">
         <h4>{product.store_product_name}</h4>
-        <p className="product-price">₩{product.store_product_price}</p>
+        <p className="product-price">₩{product.store_product_price?.toLocaleString()}</p>
       </div>
       <div className="product-controls">
         <div className="quantity-control">
