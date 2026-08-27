@@ -203,7 +203,7 @@ body {
 }
 
 .product-image {
-  width: 80%;
+  width: 50%;
   height: 30px;
   object-fit: cover;
   border-radius: 6px;
