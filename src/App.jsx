@@ -3,26 +3,43 @@ import './App.css';
 
 export default function App() {
   const [userName, setUserName] = useState('');
-  const [page, setPage] = useState('name'); // 'name', 'menu', 'summary'
-  const [myOrders, setMyOrders] = useState([]);
+  const [page, setPage] = useState('name');
+  const [allOrders, setAllOrders] = useState([]);
   const [stores, setStores] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // 메뉴 데이터 로드
+  // 초기 로드
   useEffect(() => {
-    const loadData = async () => {
-      try {
-        const response = await fetch('/menuData.json');
-        const data = await response.json();
-        setStores(data.data.list);
-        setLoading(false);
-      } catch (error) {
-        console.error('데이터 로드 실패:', error);
-        setLoading(false);
-      }
-    };
-    loadData();
+    loadMenuData();
+    loadAllOrders();
   }, []);
+
+  const loadMenuData = async () => {
+    try {
+      const response = await fetch('/menuData.json');
+      const data = await response.json();
+      setStores(data.data.list);
+    } catch (error) {
+      console.error('메뉴 로드 실패:', error);
+    }
+    setLoading(false);
+  };
+
+  const loadAllOrders = () => {
+    const saved = localStorage.getItem('ktwiz_all_orders');
+    if (saved) {
+      try {
+        setAllOrders(JSON.parse(saved));
+      } catch (e) {
+        console.error('주문 로드 실패:', e);
+      }
+    }
+  };
+
+  const saveAllOrders = (orders) => {
+    localStorage.setItem('ktwiz_all_orders', JSON.stringify(orders));
+    setAllOrders(orders);
+  };
 
   const handleNameSubmit = (e) => {
     e.preventDefault();
@@ -33,22 +50,31 @@ export default function App() {
 
   const addOrder = (store, product, quantity) => {
     if (quantity <= 0) return;
-    
+
     const newOrder = {
-      id: Date.now(),
+      id: Date.now() + Math.random(),
       userName,
       storeName: store.store_name,
       productName: product.store_product_name,
       productImage: product.store_product_image_medium || product.store_product_image,
       price: product.store_product_price,
-      quantity
+      quantity,
+      timestamp: new Date().getTime()
     };
-    
-    setMyOrders([...myOrders, newOrder]);
+
+    const updated = [...allOrders, newOrder];
+    saveAllOrders(updated);
   };
 
   const removeOrder = (id) => {
-    setMyOrders(myOrders.filter(order => order.id !== id));
+    const updated = allOrders.filter(order => order.id !== id);
+    saveAllOrders(updated);
+  };
+
+  const clearAllOrders = () => {
+    if (window.confirm('모든 주문을 삭제하시겠습니까?')) {
+      saveAllOrders([]);
+    }
   };
 
   // 이름 입력 페이지
@@ -71,6 +97,11 @@ export default function App() {
               시작하기
             </button>
           </form>
+          {allOrders.length > 0 && (
+            <p style={{ marginTop: '20px', color: '#666', fontSize: '14px' }}>
+              💾 저장된 주문: {allOrders.length}개
+            </p>
+          )}
         </div>
       </div>
     );
@@ -81,15 +112,17 @@ export default function App() {
     return (
       <div className="menu-page">
         <div className="menu-header">
-          <h1>🏟️ KT Wiz Park</h1>
-          <p>안녕하세요, <strong>{userName}</strong>님!</p>
+          <div className="header-top">
+            <h1>🏟️ KT Wiz Park</h1>
+            <p>안녕하세요, <strong>{userName}</strong>님!</p>
+          </div>
           <button className="btn-summary" onClick={() => setPage('summary')}>
-            📋 주문 확인 ({myOrders.length})
+            📋 주문 확인 ({allOrders.length})
           </button>
         </div>
 
         {loading ? (
-          <div style={{ textAlign: 'center', padding: '40px' }}>로딩 중...</div>
+          <div className="loading">로딩 중...</div>
         ) : (
           <div className="stores-grid">
             {stores.map((store) => (
@@ -107,43 +140,74 @@ export default function App() {
 
   // 주문 확인 페이지
   if (page === 'summary') {
-    const total = myOrders.reduce((sum, order) => sum + order.price * order.quantity, 0);
+    const groupedOrders = {};
+    allOrders.forEach((order) => {
+      if (!groupedOrders[order.userName]) {
+        groupedOrders[order.userName] = [];
+      }
+      groupedOrders[order.userName].push(order);
+    });
+
+    const total = allOrders.reduce((sum, order) => sum + order.price * order.quantity, 0);
 
     return (
       <div className="summary-page">
         <div className="summary-header">
-          <h1>📋 내 주문</h1>
-          <button className="btn-back" onClick={() => setPage('menu')}>
-            ◀ 메뉴로
-          </button>
+          <h1>📋 전체 주문</h1>
+          <div className="summary-buttons">
+            <button className="btn-back" onClick={() => setPage('menu')}>
+              ◀ 메뉴로
+            </button>
+            {allOrders.length > 0 && (
+              <button className="btn-clear" onClick={clearAllOrders}>
+                🗑️ 전체 삭제
+              </button>
+            )}
+          </div>
         </div>
 
         <div className="summary-content">
-          {myOrders.length === 0 ? (
-            <p style={{ textAlign: 'center', padding: '40px', color: '#999' }}>
-              주문한 음식이 없습니다
-            </p>
+          {allOrders.length === 0 ? (
+            <p className="no-orders">주문한 음식이 없습니다</p>
           ) : (
-            myOrders.map((order) => (
-              <div key={order.id} className="order-item">
-                <img src={order.productImage} alt={order.productName} className="order-image" />
-                <div className="order-info">
-                  <strong>{order.productName}</strong>
-                  <span className="order-store">{order.storeName}</span>
+            <>
+              {Object.entries(groupedOrders).map(([name, orders]) => (
+                <div key={name} className="person-section">
+                  <h3>{name}</h3>
+                  {orders.map((order) => (
+                    <div key={order.id} className="order-item">
+                      <img 
+                        src={order.productImage} 
+                        alt={order.productName} 
+                        className="order-image"
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/60?text=이미지';
+                        }}
+                      />
+                      <div className="order-info">
+                        <strong>{order.productName}</strong>
+                        <span className="order-store">{order.storeName}</span>
+                      </div>
+                      <div className="order-details">
+                        <span className="qty">x{order.quantity}</span>
+                        <span className="price">₩{(order.price * order.quantity).toLocaleString()}</span>
+                        <button 
+                          className="btn-delete" 
+                          onClick={() => removeOrder(order.id)}
+                          title="삭제"
+                        >
+                          ✕
+                        </button>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-                <div className="order-details">
-                  <span>x{order.quantity}</span>
-                  <span className="order-price">₩{order.price * order.quantity}</span>
-                  <button className="btn-delete" onClick={() => removeOrder(order.id)}>
-                    ✕
-                  </button>
-                </div>
-              </div>
-            ))
+              ))}
+            </>
           )}
         </div>
 
-        {myOrders.length > 0 && (
+        {allOrders.length > 0 && (
           <div className="summary-footer">
             <p>💰 총액: <strong>₩{total.toLocaleString()}</strong></p>
           </div>
@@ -197,11 +261,11 @@ function ProductCard({ product, quantity, onQuantityChange, onAdd }) {
   return (
     <div className="product-card">
       <img
-        src={product.store_product_image_medium || 'https://via.placeholder.com/150'}
+        src={product.store_product_image_medium || product.store_product_image || 'https://via.placeholder.com/150'}
         alt={product.store_product_name}
         className="product-image"
         onError={(e) => {
-          e.target.src = 'https://via.placeholder.com/150';
+          e.target.src = 'https://via.placeholder.com/150?text=이미지';
         }}
       />
       <div className="product-info">
