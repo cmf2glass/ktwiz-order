@@ -362,13 +362,8 @@ function ProductCard({ product, quantity, onQuantityChange, onAdd }) {
   const [loadAttempts, setLoadAttempts] = React.useState(0);
 
   const handleImageError = () => {
-    // 최대 2회 시도 후 placeholder로 변경
-    if (loadAttempts < 1) {
-      setLoadAttempts(loadAttempts + 1);
-      // 다시 시도하거나 다른 fallback으로
-    } else {
-      setImgSrc(PLACEHOLDER_IMAGE);
-    }
+  setImgSrc(PLACEHOLDER_IMAGE);
+  
   };
 
   return (
