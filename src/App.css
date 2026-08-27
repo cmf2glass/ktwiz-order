@@ -187,7 +187,7 @@ body {
 .store-products {
   padding: 12px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
   gap: 10px;
   border-top: 1px solid #f0f0f0;
 }
@@ -196,38 +196,31 @@ body {
   background: #fafafa;
   border-radius: 8px;
   overflow: hidden;
-  padding: 8px;
+  padding: 12px;
   border: 1px solid #f0f0f0;
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  gap: 10px;
   min-width: 0;
-}
-
-.product-image {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 8px;
-  background: #eee;
 }
 
 .product-info {
   flex: 1;
+  min-width: 0;
 }
 
 .product-info h4 {
-  font-size: 12px;
+  font-size: 13px;
   margin-bottom: 4px;
   line-height: 1.2;
   word-break: break-word;
+  font-weight: 600;
 }
 
 .product-price {
   font-size: 13px;
   font-weight: bold;
   color: #119DDD;
-  margin-bottom: 8px;
   display: block;
 }
 
@@ -235,7 +228,7 @@ body {
   display: flex;
   gap: 6px;
   align-items: center;
-  margin-top: auto;
+  flex-shrink: 0;
 }
 
 .quantity-control {
@@ -244,7 +237,6 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   background: white;
-  flex: 1;
   height: 28px;
 }
 
@@ -264,10 +256,11 @@ body {
   text-align: center;
   font-size: 11px;
   font-weight: bold;
+  min-width: 25px;
 }
 
 .btn-add {
-  padding: 6px 10px;
+  padding: 6px 12px;
   background: #119DDD;
   color: white;
   border: none;
@@ -352,8 +345,8 @@ body {
 
 .order-item {
   display: flex;
-  align-items: flex-start;
-  padding: 10px 0;
+  align-items: center;
+  padding: 12px 0;
   border-bottom: 1px solid #f0f0f0;
   gap: 10px;
 }
@@ -362,19 +355,9 @@ body {
   border-bottom: none;
 }
 
-.order-image {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 6px;
-  flex-shrink: 0;
-  background: #eee;
-}
-
 .order-info {
   flex: 1;
   min-width: 0;
-  padding-top: 2px;
 }
 
 .order-info strong {
@@ -392,9 +375,8 @@ body {
 .order-details {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex-shrink: 0;
-  padding-top: 2px;
 }
 
 .qty {
@@ -460,11 +442,6 @@ body {
 }
 
 @media (max-width: 600px) {
-  .product-image {
-    aspect-ratio: 1 / 1 !important;
-    height: auto !important;
-  }
-
   .name-box {
     padding: 30px 20px;
   }
@@ -485,8 +462,13 @@ body {
     width: 100%;
   }
 
-  .order-image {
-    width: 50px;
-    height: 50px;
+  .product-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .product-controls {
+    width: 100%;
+    flex-direction: column;
   }
 }
