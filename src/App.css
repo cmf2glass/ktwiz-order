@@ -459,14 +459,10 @@ body {
   color: #999;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .product-image {
-    height: 70px;
-  }
-
-  .order-image {
-    width: 45px;
-    height: 45px;
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
   }
 
   .name-box {
@@ -487,10 +483,6 @@ body {
 
   .btn-back, .btn-clear {
     width: 100%;
-  }
-
-  .product-image {
-    height: 70px;
   }
 
   .order-image {
