@@ -273,6 +273,14 @@ export default function App() {
                   <h3>{name}</h3>
                   {orders.map((order) => (
                     <div key={order.id} className="order-item">
+                      <img 
+                        src={order.product_image} 
+                        alt={order.product_name} 
+                        className="order-image"
+                        onError={(e) => {
+                          e.target.src = 'https://via.placeholder.com/80?text=이미지';
+                        }}
+                      />
                       <div className="order-info">
                         <strong>{order.product_name}</strong>
                         <span className="order-store">{order.store_name}</span>
@@ -349,6 +357,14 @@ function StoreCard({ store, onAddOrder }) {
 function ProductCard({ product, quantity, onQuantityChange, onAdd }) {
   return (
     <div className="product-card">
+      <img
+        src={product.store_product_image_medium || product.store_product_image || 'https://via.placeholder.com/150'}
+        alt={product.store_product_name}
+        className="product-image"
+        onError={(e) => {
+          e.target.src = 'https://via.placeholder.com/150?text=이미지';
+        }}
+      />
       <div className="product-info">
         <h4>{product.store_product_name}</h4>
         <p className="product-price">₩{product.store_product_price?.toLocaleString()}</p>
