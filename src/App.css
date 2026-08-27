@@ -187,7 +187,7 @@ body {
 .store-products {
   padding: 12px;
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr 1fr;
   gap: 10px;
   border-top: 1px solid #f0f0f0;
 }
@@ -196,31 +196,29 @@ body {
   background: #fafafa;
   border-radius: 8px;
   overflow: hidden;
-  padding: 12px;
+  padding: 8px;
   border: 1px solid #f0f0f0;
   display: flex;
-  align-items: center;
-  gap: 10px;
+  flex-direction: column;
   min-width: 0;
 }
 
 .product-info {
   flex: 1;
-  min-width: 0;
 }
 
 .product-info h4 {
-  font-size: 13px;
+  font-size: 12px;
   margin-bottom: 4px;
   line-height: 1.2;
   word-break: break-word;
-  font-weight: 600;
 }
 
 .product-price {
   font-size: 13px;
   font-weight: bold;
   color: #119DDD;
+  margin-bottom: 8px;
   display: block;
 }
 
@@ -228,7 +226,7 @@ body {
   display: flex;
   gap: 6px;
   align-items: center;
-  flex-shrink: 0;
+  margin-top: auto;
 }
 
 .quantity-control {
@@ -237,6 +235,7 @@ body {
   border: 1px solid #ddd;
   border-radius: 4px;
   background: white;
+  flex: 1;
   height: 28px;
 }
 
@@ -256,11 +255,10 @@ body {
   text-align: center;
   font-size: 11px;
   font-weight: bold;
-  min-width: 25px;
 }
 
 .btn-add {
-  padding: 6px 12px;
+  padding: 6px 10px;
   background: #119DDD;
   color: white;
   border: none;
@@ -345,8 +343,8 @@ body {
 
 .order-item {
   display: flex;
-  align-items: center;
-  padding: 12px 0;
+  align-items: flex-start;
+  padding: 10px 0;
   border-bottom: 1px solid #f0f0f0;
   gap: 10px;
 }
@@ -358,6 +356,7 @@ body {
 .order-info {
   flex: 1;
   min-width: 0;
+  padding-top: 2px;
 }
 
 .order-info strong {
@@ -375,8 +374,9 @@ body {
 .order-details {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
   flex-shrink: 0;
+  padding-top: 2px;
 }
 
 .qty {
@@ -442,6 +442,11 @@ body {
 }
 
 @media (max-width: 600px) {
+  .product-image {
+    aspect-ratio: 1 / 1 !important;
+    height: auto !important;
+  }
+
   .name-box {
     padding: 30px 20px;
   }
@@ -460,15 +465,5 @@ body {
 
   .btn-back, .btn-clear {
     width: 100%;
-  }
-
-  .product-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .product-controls {
-    width: 100%;
-    flex-direction: column;
   }
 }
