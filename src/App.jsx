@@ -273,14 +273,6 @@ export default function App() {
                   <h3>{name}</h3>
                   {orders.map((order) => (
                     <div key={order.id} className="order-item">
-                      <img 
-                        src={order.product_image || PLACEHOLDER_IMAGE} 
-                        alt={order.product_name} 
-                        className="order-image"
-                        onError={(e) => {
-                          e.target.src = PLACEHOLDER_IMAGE;
-                        }}
-                      />
                       <div className="order-info">
                         <strong>{order.product_name}</strong>
                         <span className="order-store">{order.store_name}</span>
@@ -354,26 +346,9 @@ function StoreCard({ store, onAddOrder }) {
   );
 }
 
-// 기본 placeholder 이미지 (SVG - 매우 경량)
-const PLACEHOLDER_IMAGE = `data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150'%3E%3Crect fill='%23f0f0f0' width='150' height='150'/%3E%3Ctext x='75' y='75' font-size='13' fill='%23bbb' text-anchor='middle' dy='.3em' font-family='sans-serif'%3E이미지%3C/text%3E%3C/svg%3E`;
-
 function ProductCard({ product, quantity, onQuantityChange, onAdd }) {
-  const [imgSrc, setImgSrc] = React.useState(product.store_product_image_medium || product.store_product_image);
-  const [loadAttempts, setLoadAttempts] = React.useState(0);
-
-  const handleImageError = () => {
-  setImgSrc(PLACEHOLDER_IMAGE);
-  
-  };
-
   return (
     <div className="product-card">
-      <img
-        src={imgSrc || PLACEHOLDER_IMAGE}
-        alt={product.store_product_name}
-        className="product-image"
-        onError={handleImageError}
-      />
       <div className="product-info">
         <h4>{product.store_product_name}</h4>
         <p className="product-price">₩{product.store_product_price?.toLocaleString()}</p>
