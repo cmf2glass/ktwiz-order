@@ -342,7 +342,7 @@
             "store_product_id": 4302,
             "store_product_name": "치킨무",
             "store_product_price": 1000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -942,7 +942,7 @@
             "store_product_id": 4894,
             "store_product_name": "물회후토마끼세트",
             "store_product_price": 24000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4976,
@@ -1814,38 +1814,38 @@
         "store_id": 328,
         "store_name": "스카이박스 또리펍",
         "store_message": "",
-        "store_logo": "",
+        "store_logo": "https://via.placeholder.com/80?text=로고",
         "store_zone": "",
         "store_product_list": [
           {
             "store_product_id": 4945,
             "store_product_name": "생맥주(500ml)",
             "store_product_price": 6000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4952,
             "store_product_name": "케이터링 ",
             "store_product_price": 0,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4954,
             "store_product_name": "스카이박스 생맥주(20L)",
             "store_product_price": 242000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4955,
             "store_product_name": "스카이박스 생맥주 케그 추가",
             "store_product_price": 200000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5099,
             "store_product_name": "하이볼",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -2217,67 +2217,67 @@
             "store_product_id": 4530,
             "store_product_name": "맥주",
             "store_product_price": 6000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4531,
             "store_product_name": "맥주 리필",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4532,
             "store_product_name": "논알콜 맥주",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4533,
             "store_product_name": "컵 구매",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4540,
             "store_product_name": "하이볼",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4559,
             "store_product_name": "레몬생맥주",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4575,
             "store_product_name": "kt wiz 나쵸",
             "store_product_price": 4900,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4581,
             "store_product_name": "오스틱 1통",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5074,
             "store_product_name": "6/11 500원",
             "store_product_price": 500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5075,
             "store_product_name": "6/11 1,000원",
             "store_product_price": 1000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5076,
             "store_product_name": "6/11 2,000원",
             "store_product_price": 2000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -2292,67 +2292,67 @@
             "store_product_id": 4520,
             "store_product_name": "맥주",
             "store_product_price": 6000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4521,
             "store_product_name": "맥주 리필",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4522,
             "store_product_name": "논알콜 맥주",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4523,
             "store_product_name": "컵 구매",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4539,
             "store_product_name": "하이볼",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4558,
             "store_product_name": "레몬생맥주",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4582,
             "store_product_name": "kt wiz 나쵸",
             "store_product_price": 4900,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4588,
             "store_product_name": "오스틱 1통",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5077,
             "store_product_name": "6/11 500원",
             "store_product_price": 500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5078,
             "store_product_name": "6/11 1,000원",
             "store_product_price": 1000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5079,
             "store_product_name": "6/11 2,000원",
             "store_product_price": 2000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -2487,67 +2487,67 @@
             "store_product_id": 4005,
             "store_product_name": "맥주",
             "store_product_price": 6000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4006,
             "store_product_name": "맥주 리필",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4393,
             "store_product_name": "논알콜 맥주",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4042,
             "store_product_name": "하이볼",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5179,
             "store_product_name": "맥주+원피스 슬리브",
             "store_product_price": 6500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5180,
             "store_product_name": "논알콜+원피스 슬리브",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5181,
             "store_product_name": "하이볼+원피스 슬리브",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4382,
             "store_product_name": "kt wiz F&B 일괄 구매 1",
             "store_product_price": 242000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4383,
             "store_product_name": "kt wiz F&B 일괄 구매 2",
             "store_product_price": 264000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4483,
             "store_product_name": "컵 구매",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4623,
             "store_product_name": "오스틱 1통",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4639,
@@ -2559,37 +2559,37 @@
             "store_product_id": 5091,
             "store_product_name": "6/11 500원",
             "store_product_price": 500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5092,
             "store_product_name": "6/11 1,000원",
             "store_product_price": 1000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5093,
             "store_product_name": "6/11 2,000원",
             "store_product_price": 2000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5094,
             "store_product_name": "6/11 신한은행 음료쿠폰",
             "store_product_price": 500000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5109,
             "store_product_name": "스카이박스 생맥주",
             "store_product_price": 242000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5111,
             "store_product_name": "6월 20일 케이터링 결제",
             "store_product_price": 396000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -2604,25 +2604,25 @@
             "store_product_id": 5196,
             "store_product_name": "스모키 초코벡",
             "store_product_price": 10800,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5197,
             "store_product_name": "발베니 캐러멜",
             "store_product_price": 11700,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5198,
             "store_product_name": "블랙 베리",
             "store_product_price": 9900,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5199,
             "store_product_name": "콘이치",
             "store_product_price": 11700,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       },
@@ -2637,73 +2637,73 @@
             "store_product_id": 4010,
             "store_product_name": "맥주",
             "store_product_price": 6000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4011,
             "store_product_name": "맥주 리필",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4394,
             "store_product_name": "논알콜 맥주",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4041,
             "store_product_name": "하이볼",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5182,
             "store_product_name": "맥주+원피스 슬리브",
             "store_product_price": 6500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5183,
             "store_product_name": "논알콜+원피스 슬리브",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5184,
             "store_product_name": "하이볼+원피스 슬리브",
             "store_product_price": 5500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4384,
             "store_product_name": "kt wiz F&B 일괄 구매 1",
             "store_product_price": 242000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4385,
             "store_product_name": "kt wiz F&B 일괄 구매 2",
             "store_product_price": 264000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4397,
             "store_product_name": "kt wiz 케이터링",
             "store_product_price": 1108800,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4484,
             "store_product_name": "컵 구매",
             "store_product_price": 5000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4616,
             "store_product_name": "오스틱 1통",
             "store_product_price": 7000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 4640,
@@ -2715,19 +2715,19 @@
             "store_product_id": 5087,
             "store_product_name": "6/11 500원",
             "store_product_price": 500,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5088,
             "store_product_name": "6/11 1,000원",
             "store_product_price": 1000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           },
           {
             "store_product_id": 5089,
             "store_product_name": "6/11 2,000원",
             "store_product_price": 2000,
-            "store_product_image_medium": "https://via.placeholder.com/100"
+            "store_product_image_medium": "https://via.placeholder.com/150?text=음식이미지"
           }
         ]
       }
