@@ -459,9 +459,14 @@ body {
   color: #999;
 }
 
-@media (max-width: 600px) {
-  .store-products {
-    grid-template-columns: 1fr;
+@media (max-width: 400px) {
+  .product-image {
+    height: 50px;
+  }
+
+  .order-image {
+    width: 45px;
+    height: 45px;
   }
 
   .name-box {
