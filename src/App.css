@@ -204,7 +204,7 @@ body {
 
 .product-image {
   width: 80%;
-  height: 60px;
+  height: 30px;
   object-fit: cover;
   border-radius: 6px;
   margin-bottom: 8px;
